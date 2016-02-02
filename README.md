@@ -1,0 +1,1 @@
+# Android_device_cprimeltemtr_device_tree

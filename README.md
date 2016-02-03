@@ -5,7 +5,7 @@
 In order to build CyanogenMod yourself, you must first setup a build environment. Instructions to do that can be found [here](http://github.com).
 
 Once you setup a build environment, initialize the CyanogenMod repo in your working directory using this command:
-> repo init -u git://github.com/CyanogenMod/android.git -b cm-12.1
+> repo init -u https://github.com/CyanogenMod/android.git -b cm-12.1
 
 Next, initialize the device repositories, using this command:
 > curl --create-dirs -L -o .repo/local_manifests/local_manifest.xml -O -L https://raw.githubusercontent.com/PlatinumMaster/android_local_manifest/cm-12.1/local_manifest.xml

@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/device_cprimeltemtr.mk
+    $(LOCAL_DIR)/full_cprimeltemtr.mk

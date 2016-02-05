@@ -33,4 +33,17 @@
 /dev/block/mmcblk1p1                       /sdcard         vfat    nosuid,nodev,barrier=1,data=ordered,nodelalloc                  wait
 /dev/block/mmcblk0p16                      /boot           emmc    defaults                                                        defaults
 /dev/block/mmcblk0p17                      /recovery       emmc    defaults                                                        defaults
-#/dev/block/bootdevice/by-name/misc         /misc           emmc    defaults      
+/dev/block/platform/7824900.sdhci/by-name/modem        /firmware-modem          vfat    ro,shortname=lower,uid=1000,gid=1026,dmask=227,fmask=337,context=u:object_r:firmware_file:s0    wait
+/dev/block/platform/7824900.sdhci/by-name/apnhlos      /firmware                vfat    ro,shortname=lower,uid=1000,gid=1026,dmask=227,fmask=337,context=u:object_r:firmware_file:s0    wait
+/dev/block/platform/7824900.sdhci/by-name/by-name/efs          /efs                     ext4    noatime,nosuid,nodev,noauto_da_alloc,journal_async_commit,errors=panic                          wait,check
+/dev/block/platform/7824900.sdhci/by-name/persist      /persist                 ext4    nosuid,nodev,data=ordered,nodelalloc                                                            wait
+/dev/block/platform/7824900.sdhci/by-name/hidden       /preload                 ext4    defaults                                                                                        defaults
+
+# VOLD managed volumes
+/devices/platform/7824900.sdhci/mmc_host/mmc*      auto                    auto    defaults     voldmanaged=extSdCard:auto,noemulatedsd
+/devices/platform/msm_hsusb_host/usb*sda        auto                    auto    defaults     voldmanaged=UsbDriveA:auto
+/devices/platform/msm_hsusb_host/usb*sdb        auto                    auto    defaults     voldmanaged=UsbDriveB:auto
+/devices/platform/msm_hsusb_host/usb*sdc        auto                    auto    defaults     voldmanaged=UsbDriveC:auto
+/devices/platform/msm_hsusb_host/usb*sdd        auto                    auto    defaults     voldmanaged=UsbDriveD:auto
+/devices/platform/msm_hsusb_host/usb*sde        auto                    auto    defaults     voldmanaged=UsbDriveE:auto
+/devices/platform/msm_hsusb_host/usb*sdf        auto                    auto    defaults     voldmanaged=UsbDriveF:auto

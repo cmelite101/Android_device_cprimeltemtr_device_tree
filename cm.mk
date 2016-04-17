@@ -7,7 +7,7 @@ $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from cprimeltemtr device
-$(call inherit-product, device/samsung/cprimeltemtr/device.mk)
+$(call inherit-product, device/samsung/cprimeltemtr/device_cprimeltemtr.mk)
 
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := cm_cprimeltemtr

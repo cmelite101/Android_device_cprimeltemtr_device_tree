@@ -39,15 +39,18 @@ TARGET_CPU_CORTEX_A53 := true
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/cprimeltemtr/include
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK      := device/samsung/cprimeltemtr/mkbootimg.mk
-BOARD_KERNEL_CMDLINE         := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci androidboot.selinux=permissive
-BOARD_KERNEL_BASE            := 0x80000000
-BOARD_RAMDISK_OFFSET         := 0x02000000
-BOARD_KERNEL_TAGS_OFFSET     := 0x01e00000
-BOARD_KERNEL_SEPARATED_DT    := true
-BOARD_KERNEL_PAGESIZE        := 2048
-TARGET_PREBUILT_KERNEL := device/samsung/cprimeltemtr/kernel
-TARGET_KERNEL_SOURCE         := kernel/samsung/msm8916-caf
+BOARD_CUSTOM_BOOTIMG_MK         := device/samsung/cprimeltemtr/mkbootimg.mk
+BOARD_KERNEL_CMDLINE            := console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci vmalloc=450M
+BOARD_KERNEL_BASE               := 0x80000000
+BOARD_RAMDISK_OFFSET            := 0x82000000
+BOARD_KERNEL_TAGS_OFFSET        := 0x81e00000
+BOARD_KERNEL_SEPARATED_DT       := true
+BOARD_KERNEL_PAGESIZE           := 2048
+#TARGET_PREBUILT_KERNEL 	    := device/samsung/cprimeltemtr/kernel
+TARGET_KERNEL_SOURCE            := kernel/samsung/cprimeltemtr
+TARGET_KERNEL_TIMA_CONFIG 	    := tima_defconfig
+TARGET_KERNEL_SELINUX_CONFIG 	:= selinux_defconfig
+TARGET_KERNEL_VARIANT_CONFIG 	:= msm8916_sec_rossa_tmo_defconfig
 
 # Partition sizes
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -77,7 +80,7 @@ TARGET_SCREEN_WIDTH := 480
 DEVICE_PACKAGE_OVERLAYS += device/samsung/cprimeltemtr/overlay
 
 # Custom RIL class
-BOARD_RIL_CLASS := ../../../device/samsung/cprimeltemtr/ril/
+BOARD_RIL_CLASS := device/samsung/cprimeltemtr/ril/
 
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
